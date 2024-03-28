@@ -15,5 +15,9 @@ public class PlayerContloal : MonoBehaviour
         {
             transform.Translate(0,0,0);
         }
+        if(Input.GetKey(KeyCode.A))
+        {
+            
+        }
     }
 }
