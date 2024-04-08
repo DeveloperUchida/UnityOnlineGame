@@ -26,7 +26,7 @@ public class PlayerContloal : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.D))
         {
-            transform.Translate(-PlayerSpeed * Time.deltaTime,0,0);
+            transform.Translate(PlayerSpeed * Time.deltaTime,0,0);
         }
         
     }
