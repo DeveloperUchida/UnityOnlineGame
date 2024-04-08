@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerContloal : MonoBehaviour
 {
+    private float PlayerSpeed = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +14,20 @@ public class PlayerContloal : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.W))
         {
-            transform.Translate(0,0,0);
+            transform.Translate(0,0,PlayerSpeed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.A))
         {
-            
+            transform.Translate(-PlayerSpeed * Time.deltaTime,0,0);
         }
+        if(Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(0,0,-PlayerSpeed * Time.deltaTime);
+        }
+        if(Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(-PlayerSpeed * Time.deltaTime,0,0);
+        }
+        
     }
 }
