@@ -42,22 +42,22 @@ public class CustomNetworkManager : NetworkManager
     }
 
     // クライアントイベント
-    public override void OnClientConnect(NetworkConnectionToClient conn)
+    public virtual void OnClientConnect(NetworkConnectionToClient conn)
     {
         Debug.Log("クライアント接続 : " + conn.connectionId);
     }
 
-    public override void OnClientDisconnect(NetworkConnectionToClient conn)
+    public virtual void OnClientDisconnect(NetworkConnectionToClient conn)
     {
         Debug.Log("クライアント切断 : " + conn.connectionId);
     }
 
-    public override void OnClientError(NetworkConnection conn, Exception exception)
+    public virtual void OnClientError(NetworkConnection conn, Exception exception)
     {
         Debug.LogError("クライアントエラー : " + exception);
     }
 
-    public override void OnClientNotReady(NetworkConnection conn)
+    public virtual void OnClientNotReady(NetworkConnection conn)
     {
         Debug.Log("クライアント準備未完了 : " + conn.connectionId);
     }
@@ -80,7 +80,7 @@ public class CustomNetworkManager : NetworkManager
         Debug.Log("サーバー切断 : " + conn.connectionId);
     }
 
-    public override void OnServerError(NetworkConnection conn, Exception exception)
+    public virtual void OnServerError(NetworkConnection conn, Exception exception)
     {
         Debug.LogError("サーバーエラー : " + exception);
     }
