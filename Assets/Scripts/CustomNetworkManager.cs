@@ -42,7 +42,7 @@ public class CustomNetworkManager : NetworkManager
     }
 
     // クライアントイベント
-    public override void NetworkConnectionToClient(NetworkConnectionToClient conn)
+    public override void OnClientConnect(NetworkConnectionToClient conn)
     {
         Debug.Log("クライアント接続 : " + conn.connectionId);
     }
@@ -62,9 +62,10 @@ public class CustomNetworkManager : NetworkManager
         Debug.Log("クライアント準備未完了 : " + conn.connectionId);
     }
 
-    public override void OnClientChangeScene(NetworkConnectionToClient conn, string newSceneName, SceneOperation sceneOperation, bool customHandling)
+    // OnClientChangeSceneメソッドの引数を修正する
+    public override void OnClientChangeScene(string newSceneName, SceneOperation sceneOperation, bool customHandling)
     {
-        base.OnClientChangeScene(conn, newSceneName, sceneOperation, customHandling);
+        base.OnClientChangeScene(newSceneName, sceneOperation, customHandling);
         Debug.Log("クライアントシーン変更 : " + newSceneName);
     }
 
