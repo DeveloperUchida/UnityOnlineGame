@@ -7,12 +7,12 @@ public class BulletControlScripts : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            GameObject bullet = (GameObject)Instantiate(BulletObjects,transform.position,Quaternion.identity);
+            GameObject bullet = (GameObject)Instantiate(BulletObjects, transform.position, Quaternion.identity);
             Rigidbody ballrigidbody = BulletObjects.GetComponent<Rigidbody>();
             ballrigidbody.AddForce(transform.forward * BulletSpeed);
-            Destroy(bullet,1);
+            Destroy(bullet, 1);
         }
     }
 }
