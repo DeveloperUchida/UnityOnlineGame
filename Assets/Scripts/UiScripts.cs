@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 public class UIScripts : MonoBehaviour
 {
     public string targetTag = "Enamy"; // 敵のタグでEnamyを作成
-    public int scoreValue = 5; //Enamyと衝突判定が発生した時の
+    public int scoreValue = 5; //Enamyと衝突判定が発生した時のスコア増加率
     private ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
@@ -12,9 +11,11 @@ public class UIScripts : MonoBehaviour
         scoreManager = FindAnyObjectByType<ScoreManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        //スコア加点処理
+        scoreManager.AddScore(scoreValue);
+        //衝突したオブジェクトを削除
+        Destroy(other.gameObject);
     }
 }
