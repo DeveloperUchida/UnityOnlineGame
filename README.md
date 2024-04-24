@@ -4,3 +4,6 @@
 - UntiyEditor 2022.3.21
 - Microsoft VisualStudioCode<p>
 &copy; 2024 DeveloperUchida</p>
+# Notes! ! 
+- This program includes DebugLog.
+Please be sure to disable it when the product is comple(it will affect game performance)
