@@ -7,3 +7,4 @@
 # Notes! ! 
 - This program includes DebugLog.
 Please be sure to disable it when the product is comple(it will affect game performance)
+- WindowSize 800x600
